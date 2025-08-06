@@ -44,22 +44,29 @@
     /* Parallax scrolling background */
     @keyframes parallaxBackground {
       0% {
-        background-position-x: 100%;
+        background-position: 100% 0;
       }
+
       100% {
-        background-position-x: 0%;
+        background-position: 0% 0;
       }
     }
 
     body {
       background-image: url('src/spacebackground.png');
-      background-size: cover;
+      background-size: auto 100%;
+      /* Maintain full height but allow horizontal scrolling */
       background-position: center;
-      background-attachment: fixed; /* Creates parallax effect */
-      background-repeat: no-repeat;
-      animation: parallaxBackground 60s linear infinite; /* Moves right to left over 60 seconds */
+      background-attachment: fixed;
+      background-repeat: repeat-x;
+      /* Allow horizontal repeating */
+      animation: parallaxBackground 60s linear infinite;
+      min-height: 100vh;
+      /* Ensure body covers full viewport height */
+      margin: 0;
+      /* Remove default margin */
     }
-    
+
     /* Team container styles */
     .team-container {
       display: flex;
@@ -67,12 +74,12 @@
       justify-content: center;
       gap: 2rem;
     }
-    
+
     .team-member {
       flex: 0 0 auto;
       width: 250px;
     }
-    
+
     @media (max-width: 768px) {
       .team-member {
         width: 100%;
@@ -153,7 +160,8 @@
       <a href="team.html" class="block px-3 py-2 hover:bg-[#6B21A8]/50 rounded transition duration-200">Team</a>
       <a href="gallery.html" class="block px-3 py-2 hover:bg-[#6B21A8]/50 rounded transition duration-200">Gallery</a>
       <a href="about.html" class="block px-3 py-2 hover:bg-[#6B21A8]/50 rounded transition duration-200">About</a>
-      <a href="contact.html" class="block px-3 py-2 hover:bg-[#6B21A8]/50 rounded transition duration-200">Contact Us</a>
+      <a href="contact.html" class="block px-3 py-2 hover:bg-[#6B21A8]/50 rounded transition duration-200">Contact
+        Us</a>
       <a href="login.html"
         class="block px-3 py-2 bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] rounded-lg font-medium mt-2 text-center hover:shadow-lg hover:shadow-[#7C3AED]/20 transition duration-300">Login/Signup</a>
     </div>
@@ -216,8 +224,7 @@
       <div class="team-member bg-[#000000]/70 p-6 rounded-xl border border-[#DB2777]/30 text-center">
         <div
           class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#DB2777] to-[#F472B6] overflow-hidden border-2 border-[#DB2777]/30">
-          <img src="https://via.placeholder.com/200?text=Tech+Lead" alt="Tech Lead"
-            class="w-full h-full object-cover">
+          <img src="https://via.placeholder.com/200?text=Tech+Lead" alt="Tech Lead" class="w-full h-full object-cover">
         </div>
         <h3 class="font-bold text-xl mb-1 text-white">Sri Narendra</h3>
         <p class="text-[#DB2777] mb-3">Lead Technical</p>
@@ -307,8 +314,7 @@
       <div class="team-member bg-[#000000]/70 p-6 rounded-xl border border-[#F472B6]/30 text-center">
         <div
           class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#F472B6] to-[#DB2777] overflow-hidden border-2 border-[#F472B6]/30">
-          <img src="https://via.placeholder.com/200?text=Marketing" alt="Marketing"
-            class="w-full h-full object-cover">
+          <img src="https://via.placeholder.com/200?text=Marketing" alt="Marketing" class="w-full h-full object-cover">
         </div>
         <h3 class="font-bold text-xl mb-1 text-white">Satyam Khokhar</h3>
         <p class="text-[#F472B6] mb-3">Lead Marketing and Sponsorship</p>
@@ -320,8 +326,7 @@
       <div class="team-member bg-[#000000]/70 p-6 rounded-xl border border-[#FBBF24]/30 text-center">
         <div
           class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#FBBF24] to-[#F59E0B] overflow-hidden border-2 border-[#FBBF24]/30">
-          <img src="https://via.placeholder.com/200?text=Marketing" alt="Marketing"
-            class="w-full h-full object-cover">
+          <img src="https://via.placeholder.com/200?text=Marketing" alt="Marketing" class="w-full h-full object-cover">
         </div>
         <h3 class="font-bold text-xl mb-1 text-white">Karthik Yernana</h3>
         <p class="text-[#FBBF24] mb-3">Co-lead Marketing and Sponsorship</p>
@@ -334,8 +339,7 @@
       <div class="team-member bg-[#000000]/70 p-6 rounded-xl border border-[#10B981]/30 text-center">
         <div
           class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#10B981] to-[#059669] overflow-hidden border-2 border-[#10B981]/30">
-          <img src="https://via.placeholder.com/200?text=Speaking" alt="Speaking"
-            class="w-full h-full object-cover">
+          <img src="https://via.placeholder.com/200?text=Speaking" alt="Speaking" class="w-full h-full object-cover">
         </div>
         <h3 class="font-bold text-xl mb-1 text-white">Somya Kashyap</h3>
         <p class="text-[#10B981] mb-3">Lead Public Speaking</p>
@@ -347,8 +351,7 @@
       <div class="team-member bg-[#000000]/70 p-6 rounded-xl border border-[#DB2777]/30 text-center">
         <div
           class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#DB2777] to-[#F472B6] overflow-hidden border-2 border-[#DB2777]/30">
-          <img src="https://via.placeholder.com/200?text=Content" alt="Content"
-            class="w-full h-full object-cover">
+          <img src="https://via.placeholder.com/200?text=Content" alt="Content" class="w-full h-full object-cover">
         </div>
         <h3 class="font-bold text-xl mb-1 text-white">Parth Bhole</h3>
         <p class="text-[#DB2777] mb-3">Lead Content Writing</p>
