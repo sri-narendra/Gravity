@@ -40,26 +40,32 @@
     .animate-fadeIn {
       animation: fadeIn 1s ease-out forwards;
     }
-/* Parallax scrolling background */
-@keyframes parallaxBackground {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 0% 0;
-  }
-}
 
-body {
-  background-image: url('src/spacebackground.png');
-  background-size: auto 100%; /* Maintain full height but allow horizontal scrolling */
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: repeat-x; /* Allow horizontal repeating */
-  animation: parallaxBackground 60s linear infinite;
-  min-height: 100vh; /* Ensure body covers full viewport height */
-  margin: 0; /* Remove default margin */
-}
+    /* Parallax scrolling background */
+    @keyframes parallaxBackground {
+      0% {
+        background-position: 100% 0;
+      }
+
+      100% {
+        background-position: 0% 0;
+      }
+    }
+
+    body {
+      background-image: url('src/spacebackground.png');
+      background-size: auto 100%;
+      /* Maintain full height but allow horizontal scrolling */
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: repeat-x;
+      /* Allow horizontal repeating */
+      animation: parallaxBackground 60s linear infinite;
+      min-height: 100vh;
+      /* Ensure body covers full viewport height */
+      margin: 0;
+      /* Remove default margin */
+    }
   </style>
 </head>
 
@@ -134,7 +140,8 @@ body {
       <a href="team.html" class="block px-3 py-2 hover:bg-[#6B21A8]/50 rounded transition duration-200">Team</a>
       <a href="gallery.html" class="block px-3 py-2 hover:bg-[#6B21A8]/50 rounded transition duration-200">Gallery</a>
       <a href="about.html" class="block px-3 py-2 hover:bg-[#6B21A8]/50 rounded transition duration-200">About</a>
-      <a href="contact.html" class="block px-3 py-2 hover:bg-[#6B21A8]/50 rounded transition duration-200">Contact Us</a>
+      <a href="contact.html" class="block px-3 py-2 hover:bg-[#6B21A8]/50 rounded transition duration-200">Contact
+        Us</a>
       <a href="login.html"
         class="block px-3 py-2 bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] rounded-lg font-medium mt-2 text-center hover:shadow-lg hover:shadow-[#7C3AED]/20 transition duration-300">Login/Signup</a>
     </div>
@@ -153,13 +160,15 @@ body {
       </p>
       <div class="flex flex-wrap gap-4">
         <a href="joinus.html"
-          class="px-6 py-3 bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] rounded-lg font-medium hover:from-[#6D28D9] hover:to-[#2563EB] transition text-white">Join Our Organization</a>
+          class="px-6 py-3 bg-gradient-to-r from-[#7C3AED] to-[#3B82F6] rounded-lg font-medium hover:from-[#6D28D9] hover:to-[#2563EB] transition text-white">Join
+          Our Organization</a>
         <a href="#channels"
-          class="px-6 py-3 border border-[#6B21A8] text-[#A855F7] rounded-lg font-medium hover:bg-[#6B21A8]/30 transition">Explore more</a>
+          class="px-6 py-3 border border-[#6B21A8] text-[#A855F7] rounded-lg font-medium hover:bg-[#6B21A8]/30 transition">Explore
+          more</a>
       </div>
     </div>
     <div class="md:w-1/2 flex justify-center floating">
-      <img src="src/fff.png" alt="Gravity Spaceship" class="w-full max-w-lg transform" style="filter: brightness(70%); transform: rotate(35deg);">
+      <img src="src/mainlogo.png" alt="Gravity Spaceship" class="w-full max-w-lg transform">
     </div>
   </section>
 
