@@ -413,17 +413,26 @@
     // Form Submission
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxYWbb530Sm4_F1YWIfxkLmztKxooSpyHohmdPN8fkrXOwcTubRzsxtFU9lIKqXSRaVxQ/exec';
     const form = document.forms['join-form'];
+    const submitButton = form.querySelector('button[type="submit"]');
 
     form.addEventListener('submit', e => {
       e.preventDefault();
+      
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+      
       fetch(scriptURL, { method: 'POST', body: new FormData(form) })
         .then(response => {
           alert("Thank you! Your application has been submitted.");
           form.reset();
+          submitButton.disabled = false; // Re-enable for another submission
+          submitButton.textContent = "Submit Application";
         })
         .catch(error => {
           console.error('Error!', error.message);
           alert("There was a problem submitting your form.");
+          submitButton.disabled = false; // Allow retry if failed
+          submitButton.textContent = "Submit Application";
         });
     });
 
